@@ -1,5 +1,5 @@
 function NoteList() {
-    this.notes = ["Hi", "Jack", "Dafna"];
+    this.notes = [];
 }
 
 var noteList1 = new NoteList()
@@ -9,9 +9,7 @@ NoteList.prototype.returnAllNotes = function(){
 };
 
 NoteList.prototype.newNote = function(content){
-    var note_1 = new Note(content)
-    this.notes.push(note_1);
+    var note = new Note(content)
+    this.notes.push(note);
     console.log(this.notes);
 };
- notelist = new NoteList();
- noteList1.newNote("buy Milk")
