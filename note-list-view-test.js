@@ -4,6 +4,7 @@
         noteList.newNote("Hi Liz!")
         var noteListView = new NoteListView(noteList);
         if (noteListView.output() !== "<ul><li>Hi Liz!</li></ul>") {
+            console.log(noteListView.noteList.notes[0])
             console.log(noteListView.output());
             throw new Error("NoteListViewtest failure")
         }
@@ -25,7 +26,7 @@
             throw new Error("Fail: Note List view with multiple notes \n Expected <ul><li>Hi Liz!</li><li>Hi Dafna!</li></ul> \n got " + noteListView.output())
         }
         else {
-            console.log("testNoteListView passes")
+            console.log("testNoteListViewWithMultipleNotes passes")
         }
     } 
     testNoteListViewWithMultipleNotes();
