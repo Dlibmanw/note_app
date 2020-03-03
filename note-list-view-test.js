@@ -13,3 +13,20 @@
     } 
     testNoteListView();
 })(this);
+
+(function(exports){
+    function testNoteListViewWithMultipleNotes() {
+        var noteList = new NoteList();
+        noteList.newNote("Hi Liz!");
+        noteList.newNote("Hi Dafna!");
+        var noteListView = new NoteListView(noteList);
+
+        if (noteListView.output() !== "<ul><li>Hi Liz!</li><li>Hi Dafna!</li></ul>") {
+            throw new Error("Fail: Note List view with multiple notes \n Expected <ul><li>Hi Liz!</li><li>Hi Dafna!</li></ul> \n got " + noteListView.output())
+        }
+        else {
+            console.log("testNoteListView passes")
+        }
+    } 
+    testNoteListViewWithMultipleNotes();
+})(this);
