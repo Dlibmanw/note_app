@@ -1,9 +1,11 @@
-function Note(text) {
-    this.text = text;
-}
+(function(exports){
+    function Note(text) {
+        this.text = text;
+    }
 
-var note1 = new Note("Hello world!")
+    exports.Note = Note;
 
-Note.prototype.returnText = function(){
-    return this.text;
-};
+    Note.prototype.returnText = function(){
+        return this.text;
+    }
+})(this);
