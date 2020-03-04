@@ -1,12 +1,12 @@
 (function(exports){
     function testNoteListViewWhenEmpty() {
-        // var noteList = new NoteList();
-        // var noteListView = new NoteListView(noteList);
+        var noteList = new NoteList();
+        var noteListView = new NoteListView(noteList);
         if (noteListView.output() !== "<ul></ul>") {
             throw new Error("NoteListViewtest when empty failure")
         }
         else {
-            console.log("testNoteListView when empty passes")
+            console.log("%c testNoteListView when empty passes", 'color: green')
         }
     } 
     testNoteListViewWhenEmpty();
