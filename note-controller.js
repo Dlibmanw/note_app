@@ -4,6 +4,8 @@
                 this.noteListView = new NoteListView(noteList)
         }
 
+        exports.NoteController = NoteController;
+
         var noteList = new NoteList()
         noteList.newNote('Favourite drink: Guinness')
         var noteController = new NoteController(noteList)

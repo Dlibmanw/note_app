@@ -1,21 +1,32 @@
+import { NoteList } from "./note-list-model";
+
 (function() {
-  function testNoteController() {
+  function testNoteControllerInstantiation() {
+    var noteController = new NoteController();
+    if (!noteController instanceof NoteController) {
+      throw new Error("testNoteControllerInstantiation fails")
+    } else {
+      console.log("%c testNoteControllerInstantiation passes", 'color: green')
+    }
+  }
+  testNoteControllerInstantiation();
+})()
+
+(function() {
+  function testNoteControllerExecution() {
+    function NoteListViewDouble() {};
     
+    var noteList = new NoteList()
+
+    var noteController = new NoteController(noteList)
+
+    NoteListViewDouble.prototype = {
+      output: function() {}
+    };
+    
+    var noteListViewDouble = new NoteListViewDouble();
+
+    // noteList.newNote('Favourite drink: Guinness')
+    noteController.noteListViewDouble;
   }
 })
-
-
-
-(function(exports){
-  function testNoteListViewWhenEmpty() {
-      var noteList = new NoteList();
-      var noteListView = new NoteListView(noteList);
-      if (noteListView.output() !== "<ul></ul>") {
-          throw new Error("NoteListViewtest when empty failure")
-      }
-      else {
-          console.log("%c testNoteListView when empty passes", 'color: green')
-      }
-  } 
-  testNoteListViewWhenEmpty();
-})(this);
